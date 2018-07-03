@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Train Schedule</title>
+
+    <!DOCTYPE html>
+    <html lang="en">
+
+    <head>
+        <meta charset="UTF-8">
+        <title>Train Schedule</title>
+        <!-- Bootstrap CSS CDN  -->
+        <link rel="stylesheet" href="assets/css/reset.css"/>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0/css/bootstrap.min.css" />
+        <!-- Font Awesome CSS Icons (For cool glyphicons) -->
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css" />
+        <link rel="stylesheet" href="assets/css/style.css"/>
+        <!-- Style to fix the issue of text extending past panel length -->
+    </head>
+
+    <body>
+        <!-- Main Bootstrap Search -->
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-12">
+                    <div class="jumbotron" style="background-color: #20315A ; color: white;">
+                        <h1 class="text-center">
+                            <strong>
+                                <i class="fa fa-newspaper-o"></i> Train Schedule</strong>
+                        </h1>
+                    </div>
+                    <div class=>
+                        <strong>
+                            <i class="fa fa-list-alt"></i> Current Train Schedule</strong>
+                    </div>
+                    <br>
+                    <!-- This panel will initially be made up of a panel and wells for each of the articles retrieved -->
+                    <div class="card-header">
+                        <!-- Panel Heading for the retrieved articles box -->
+                        <div class="card-header">
+                            <center>
+                                <table id="directory">
+                                    <thead>
+                                        <tr>
+                                            <th id="trainName">Train Name</th>
+                                            <th id="destination">Destination</th>
+                                            <th id="frequency">Frequency (min)</th>
+                                            <th id="nextArrival">Next Arrival</th>
+                                            <th id="minutosAway">Minutos Away</th>
+                                        </tr>
+                                    </thead>
+                                </table>
+                            </center>
+                        </div>
+                        <!-- This main panel will hold each of the resulting articles -->
+                        <div class="card-body">
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-sm-12">
+                    <div class=>
+                        <strong>
+                            <i class="fa fa-list-alt"></i> Add Train</strong>
+                    </div>
+                    <br>
+                    <!-- First panel is for handling the search parameters -->
+                    <div class="card">
+                        <div class="card-body">
+                            <!-- Here we create an HTML Form for handling the inputs-->
+                            <form role="form">
+                                <div class="form-group">
+                                    <label for="trainName">Train Name:</label>
+                                    <input type="text" class="form-control" id="trainName-term">
+                                </div>
+                                <!-- Here we capture the number of records that the user wants to retrieve  -->
+                                <div class="form-group">
+                                    <label for="destination">Destination</label>
+                                    <input type="text" class="form-control" id="destination-term">
+
+                                </div>
+                                <!-- Here we capture the Start Year Parameter-->
+                                <div class="form-group">
+                                    <label for="firstTrainTime">First Train Time (HH:mm - Military Time)</label>
+                                    <input type="time" class="form-control" id="firstTrainTime">
+                                </div>
+                                <!-- Here we capture the End Year Parameter -->
+                                <div class="form-group">
+                                    <label for="frequency">Frequency (min)</label>
+                                    <input type="time" class="form-control" id="frequency">
+                                </div>
+                                <!-- Here we have our final submit button -->
+                                <button id="add-train" type="button" class="btn btn-primary">Submit</button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- jQuery JS -->
+            <script src="https://code.jquery.com/jquery.js"></script>
+            <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0/js/bootstrap.bundle.min.js"></script>
+
+            <!-- Script -->
+            <script src="https://www.gstatic.com/firebasejs/5.2.0/firebase.js"></script>
+            <script src="https://cdn.jsdelivr.net/momentjs/2.12.0/moment.min.js"></script>
+            <script src="assets/javascript/app.js"></script>
+    </body>
+
+    </html>
