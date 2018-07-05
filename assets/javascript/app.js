@@ -19,11 +19,16 @@ var currentTime = moment();
 var dateTime = null;
 date = null;
 
-var update = function () {
-    date = moment(new Date())
-    dateTime.html(date.format('dddd, MMMM Do YYYY, h:mm:ss a'));
-};
+// var update = function () {
+//     date = moment(new Date());
+//     dateTime.html(date.format('dddd, MMMM Do YYYY, h:mm:ss a'));
+// };
 
+// $(document).ready(function(){
+//     datetime = $('#current-status')
+//     update();
+//     setInterval(update, 1000);
+//   });
 // Capture Button Click
 $(document).on("click", "#add-train", function () {
     event.preventDefault();
@@ -52,10 +57,10 @@ $(document).on("click", "#add-train", function () {
 
     var nextArrival = moment(nextTrain).format("hh:mm a");
     console.log(nextArrival);
-    // var nextArrivalUpdate = function () {
-    //     date = moment(new Date())
-    //     dateTime.html(date.format("hh:mm a"));
-    // }
+    var nextArrivalUpdate = function () {
+        date = moment(new Date())
+        dateTime.html(date.format("hh:mm a"));
+    }
 
     database.ref().push({
         trainName: trainName,
@@ -71,39 +76,22 @@ $(document).on("click", "#add-train", function () {
 });
 
 database.ref().on("child_added", function (childSnapshot) {
-    //console.log(childSnapshot.val().trainName);
-    //console.log(childSnapshot.val().destination);
-    //console.log(childSnapshot.val().frequency);
-    //console.log(childSnapshot.val().monthly);
-
-    // var newtr = $("<tr>");
-    // var trainNametd = $("<td>").text(childSnapshot.val().trainName);
-    // var destinationtd = $("<td>").text(childSnapshot.val().destination);
-    // var datetd = $("<td>").text(moment(childSnapshot.val().date).format("MMM Do YYYY"));
-    // var workedtd = $("<td>").text(moment(childSnapshot.val().date).diff(moment(), "months") * -1);
-    // var frequencytd = $("<td>").text(childSnapshot.val().frequency);
-
-    // newtr.append(trainNametd);
-    // newtr.append(destinationtd);
-    // newtr.append(frequencytd);
-    // newtr.append(workedtd);
-    // newtr.append(datetd);
-
-    // $(".card-body").append(newtr);
+    
     $("#trainName").append("<tr><td><span> " + childSnapshot.val().trainName) + "</td>" + "</tr>";
     $("#destination").append("<tr><td><span> " + childSnapshot.val().destination) + "</td>" + "</tr>";
     $("#nextArrival").append("<tr><td><span> " + childSnapshot.val().nextArrival)+ "</td>" + "</tr>";
     $("#frequency").append("<tr><td><span> " + childSnapshot.val().frequency) + "</td>" + "</tr>";
     $("#minutesAway").append("<tr><td><span> " + childSnapshot.val().minutesAway)+ "</td>" + "</tr>";
 
-
 }, function (errorObject) {
     console.log("Errors handled: " + errorObject.code);
 });
-// database.ref().orderByChild("dateAdded").limitToLast(1).on("child_added", function(snapshot) {
-//     // Change the HTML to reflect
-//     $("#trainName").text(snapshot.val().trainNametd);
-//     $("#destination").text(snapshot.val().destinationtd);
-//     $("#frequency").text(snapshot.val().frequencytd);
-//     //$("#nextArrival").text(snapshot.val().comment);
+// database.ref().once('value', function(dataSnapshot){ 
+//     var trainIndex = 0;
+
+//       dataSnapshot.forEach(
+//           function(childSnapshot) {
+//               trainIDs[trainIndex++] = childSnapshot.key();
+//           }
+//       );
 //   });

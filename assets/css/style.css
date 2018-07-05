@@ -8,3 +8,16 @@
 table {
     width: 80%;
 }
+.jumbotron{
+    background-color: rgb(151, 171, 218) ; 
+    color: white;
+}
+body{
+    background-image: url(https://media.giphy.com/media/xTiTnxpQ3ghPiB2Hp6/giphy.gif);
+}
+.container{
+    background:rgb(60, 194, 183);
+}
+.card-header{
+    background: rgb(142, 194, 190);
+}
