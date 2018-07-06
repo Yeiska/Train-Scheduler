@@ -86,12 +86,3 @@ database.ref().on("child_added", function (childSnapshot) {
 }, function (errorObject) {
     console.log("Errors handled: " + errorObject.code);
 });
-// database.ref().once('value', function(dataSnapshot){ 
-//     var trainIndex = 0;
-
-//       dataSnapshot.forEach(
-//           function(childSnapshot) {
-//               trainIDs[trainIndex++] = childSnapshot.key();
-//           }
-//       );
-//   });
