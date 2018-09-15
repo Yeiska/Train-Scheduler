@@ -55,7 +55,7 @@ $(document).on("click", "#add-train", function () {
     var nextTrain = moment().add(minutesAway, "minutes");
     console.log(nextTrain);
 
-    var nextArrival = moment(nextTrain).format("hh:mm a");
+    var nextArrival = moment(nextTrain).format("hh:mm");
     console.log(nextArrival);
     var nextArrivalUpdate = function () {
         date = moment(new Date())
