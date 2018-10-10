@@ -7,5 +7,11 @@ Form: Enter the train name, destination, the time of that train's first deparatu
 The app will retrieve and manipulate this information with Moment.js and it is used HTML, CSS, and jQuery to render the schedule and admin panel on the web page
 ## app page
 ![app Image](/assets/images/Train.png)
+
+## Technology used: HTML, CSS, jQuery and Firebase.
+
 ## You can see the app on the following link
 https://yeiska.github.io/Train-Scheduler/
+
+## You can see the code here:
+https://github.com/Yeiska/Train-Scheduler
